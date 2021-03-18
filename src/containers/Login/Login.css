@@ -1,0 +1,15 @@
+.container {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.form, .label, .email, .password {
+
+flex-direction: row;
+justify-self: center;
+align-self: center;
+
+}
