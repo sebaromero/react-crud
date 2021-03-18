@@ -8,6 +8,7 @@ const validation = values => {
   if (!values.email) {
     errors.email = 'Por favor, ingrese email';
   }
+
   if (!values.password) {
     errors.password = 'Por favor, ingrese contraseña';
   }
@@ -20,15 +21,14 @@ const Login = () => {
       <Formik 
         initialValues = {{
           email: '',
-          password: ''
-      }}>
-        <Form className="form"
-              onSubmit={( values, actions )=>{
-                console.log(values)
-                console.log(actions)
-                actions.setSubmitting(false);
-              }}
-              validate={validation}>
+          password: ''}}
+        onSubmit={( values, actions )=>{
+          console.log(values)
+          console.log(actions)
+          actions.setSubmitting(false);
+          }}
+        validate={validation}>
+        <Form className="form">
           <div className="email">
             <label htmlFor="email">Email</label>
             <Field className="email" 
