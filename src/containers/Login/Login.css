@@ -1,15 +1,38 @@
+html {
+
+background-color: #ffedc7;
+}
+
 .container {
 
+width: 50%;
+height: 150%;
 display: flex;
+margin-top: 10%;
+margin-left: 25%;
+padding-top: 2%;
+padding-bottom: 2%;
+background-image: url("https://st3.depositphotos.com/3930503/12616/i/950/depositphotos_126166376-stock-photo-marble-ink-colorful-brown-marble.jpg");
 flex-direction: column;
 justify-content: center;
 align-items: center;
 }
 
-.form, .label, .email, .password {
+.email, .password {
 
 flex-direction: row;
-justify-self: center;
 align-self: center;
+width: 100%;
+padding: 5%, 10%;
+margin: 8px, 0;
+}
 
+.submit {
+
+align-self: center;
+justify-self: center;
+text-align: center;
+padding: 10px;
+margin-top: 5px;
+cursor: pointer;
 }
