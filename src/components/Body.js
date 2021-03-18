@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import { fetchData } from "../api/users";
+import Table from './Table';
 
 import "../styles/Spinner.css";
 
@@ -48,5 +49,7 @@ export const Body = () => {
     </div>;
   }
 
-  return <h1>it's working</h1>;
+  return (
+    <Table users={users} />
+  )
 };
