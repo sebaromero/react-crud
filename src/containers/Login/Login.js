@@ -5,7 +5,7 @@ import { useState , useEffect } from "react";
 const Login = () => {
   return (
     <div className="container">
-      <h1>Login</h1>
+      <h1 className="header">Login</h1>
       <Formik 
       initialValues = {{
         email: '',
