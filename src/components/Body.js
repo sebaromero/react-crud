@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import { fetchData } from "../api/users";
-import Table from './Table';
+import Table from "./Table";
 
 import "../styles/Spinner.css";
 
@@ -21,8 +21,10 @@ export const Body = () => {
       setState({ loading: true, users: [], error: null });
 
       try {
-        const { data } = await fetchData();
-        setState({ loading: false, users: data, error: null });
+        setTimeout(async () => {
+          const { data } = await fetchData();
+          setState({ loading: false, users: data, error: null });
+        }, 1500);
       } catch (e) {
         setState({ loading: false, users: [], error: e.message });
       }
@@ -49,7 +51,5 @@ export const Body = () => {
     </div>;
   }
 
-  return (
-    <Table users={users} />
-  )
+  return <Table users={users} />;
 };
