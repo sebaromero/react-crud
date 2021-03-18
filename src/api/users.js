@@ -1,13 +1,13 @@
-import Axios from "axios";
+import axios from "axios";
 
-export const getUsers = async () => {
+export const fetchData = async () => {
   try {
-    const response = await Axios.get(
-      "https://jsonplaceholder.typicode.com/users"
-    );
-    const data = await response.json();
-    console.log("data", data);
+    const response = await axios({
+      method: "get",
+      url: "https://jsonplaceholder.typicode.com/users",
+    });
+    return response;
   } catch (error) {
-    console.error("error", error);
+    return error;
   }
 };
