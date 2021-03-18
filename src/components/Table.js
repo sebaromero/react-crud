@@ -9,7 +9,7 @@ export default function Table({users}) {
                     <tr className='header'>
                         <th>Nombre</th>
                         <th>Correo electronico</th>
-                        <th>Perfil</th>
+                        <th>Username</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,6 +18,7 @@ export default function Table({users}) {
                             <tr>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
+                                <td>{user.username}</td>
                             </tr>
                         )) : <tr><td>Aún no hay usuarios registrados</td></tr>
                     }
