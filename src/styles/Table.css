@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 75%;
   height: 97vh;
   display: flex;
   justify-content: center;
@@ -7,7 +7,8 @@
   margin: auto;
 }
 
-.table-container {
+
+/* .table-container {
   width: 50%;
   border: 1px solid #edf2f7;
   border-radius: 8px;
@@ -22,3 +23,4 @@
   background: #f7fafc;
   color: #4a5568;
 }
+ */
