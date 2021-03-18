@@ -1,26 +1,55 @@
 import "./Login.css";
 import { Formik, Field, Form } from "formik";
-import { useState , useEffect } from "react";
+// import { useState , useEffect } from "react";
+
+const validation = values => {
+  let errors = {}
+
+  if (!values.email) {
+    errors.email = 'Por favor, ingrese email';
+  }
+  if (!values.password) {
+    errors.password = 'Por favor, ingrese contraseña';
+  }
+};
 
 const Login = () => {
   return (
     <div className="container">
       <h1>Login</h1>
       <Formik 
-      initialValues = {{
-        email: '',
-        password: ''
+        initialValues = {{
+          email: '',
+          password: ''
       }}>
-        <Form className="form">
-            <div className="email">
-              <label htmlFor="email">Email</label>
-              <Field className="email" id="email" type="email" name="email" placeholder="Write down your email adress" required/>
+        <Form className="form"
+              onSubmit={( values, actions )=>{
+                console.log(values)
+                console.log(actions)
+                actions.setSubmitting(false);
+              }}
+              validate={validation}>
+          <div className="email">
+            <label htmlFor="email">Email</label>
+            <Field className="email" 
+                   id="email" 
+                   type="email" 
+                   name="email" 
+                   placeholder="Ingrese email" 
+                   required/>
+          </div>
+          <div className="password">
+            <label className="label" 
+                   htmlFor="password">Contraseña</label>
+            <Field className="password" 
+                   id="password" 
+                   type="password" 
+                   name="password" 
+                   placeholder="Ingrese contraseña" 
+                   required/>
             </div>
-            <div className="password">
-              <label className="label" htmlFor="password">Password</label>
-              <Field className="password" id="password" type="password" name="password" placeholder="Write down your password" required/>
-            </div>
-            <button className="submit" type="submit" onSubmit={()=>{}}>Log In</button>
+            <button className="submit" 
+                    type="submit">Ingresar</button>
         </Form>
       </Formik>
     </div>
