@@ -13,6 +13,8 @@ const validation = values => {
 
   if (!values.password) {
     errors.password = 'Por favor, ingrese contraseña';
+  } else if (values.password.lenght <= 8) {
+    console.log("Contraseña incorrecta");
   }
 };
 
