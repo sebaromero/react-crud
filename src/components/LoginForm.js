@@ -1,5 +1,5 @@
 import { Field, Form } from "formik";
-import "./LoginForm.css";
+import "../styles/LoginForm.css";
 import React from 'react';
 
 const LoginForm = () => {
@@ -8,7 +8,7 @@ return (
           <Form className="form mb-3">
                <div className="email">
                    <label htmlFor="email" className="form-label mt-3">Email</label>
-                   <Field className="form-control" id="email" name="email"type="email" placeholder="Ingrese email" />
+                   <Field className="form-control" id="email" name="email" type="email" placeholder="Ingrese email" />
                </div>
                <div className="password">
                    <label className="form-label mt-3" htmlFor="password">Contraseña</label>

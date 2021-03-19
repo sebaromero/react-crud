@@ -1,6 +1,6 @@
 import "./Login.css";
 import { Formik } from "formik";
-import LoginForm from "../Components/LoginForm";
+import LoginForm from "../../components/LoginForm.js";
 // import { useState , useEffect } from "react";
 
 const validation = values => {
@@ -23,11 +23,11 @@ const Login = () => {
         initialValues = {{
           email: '',
           password: ''}}
-          onSubmit={( values, actions )=>{
+        onSubmit={( values, actions )=>{
           console.log(values)
           console.log(actions)
           actions.setSubmitting(false);
-          }}
+        }}
         validate={validation}>
         <LoginForm/>
       </Formik>
