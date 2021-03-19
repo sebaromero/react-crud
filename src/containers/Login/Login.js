@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
 
 const validation = values => {
-  let errors = {}
+  const errors = {}
 
   if (!values.email) {
     errors.email = 'Por favor, ingrese email';
@@ -14,6 +14,8 @@ const validation = values => {
   if (!values.password) {
     errors.password = 'Por favor, ingrese contraseña';
   }
+
+  return errors;
 };
 
 const Login = () => {
