@@ -1,6 +1,6 @@
 import "./Login.css";
-import { Formik, Field, Form } from "formik";
-import Formulario from "../Components/Formulario";
+import { Formik } from "formik";
+import LoginForm from "../Components/LoginForm";
 // import { useState , useEffect } from "react";
 
 const validation = values => {
@@ -29,7 +29,7 @@ const Login = () => {
           actions.setSubmitting(false);
           }}
         validate={validation}>
-        <Formulario/>
+        <LoginForm/>
       </Formik>
     </div>
   );
