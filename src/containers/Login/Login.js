@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
 
 const validation = values => {
-  let errors = {}
+  const errors = {}
 
   if (!values.email) {
     errors.email = 'Por favor, ingrese email';
@@ -16,6 +16,8 @@ const validation = values => {
   } else if (values.password.lenght <= 8) {
     console.log("Contraseña incorrecta");
   }
+
+  return errors;
 };
 
 const Login = () => {
