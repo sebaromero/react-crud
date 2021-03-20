@@ -4,7 +4,7 @@ import React from 'react';
 
 const LoginForm = ({ handleSubmit, errors } ) => {
 return (
-     <div className="container">
+     <div className="container d-flex p-2 bd-highlight">
           <Form onSubmit={handleSubmit}
                 className="form mb-3">
                <div className="email">
