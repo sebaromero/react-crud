@@ -33,14 +33,14 @@ const SignupSchema = Yup.object().shape({
 
 const Login = () => {
   return (
-    <div className="container">
+    <div className="container d-flex p-2 bd-highlight">
       <h1 className="header">Login</h1>
       <Formik 
         initialValues = {{
           email: '',
           password: '',
           }}
-        onSubmit={( values, actions )=>{
+        onSubmit={( values, actions)=>{
           console.log(values)
           actions.setSubmitting(false);
           alert(JSON.stringify(values, null, 2));
