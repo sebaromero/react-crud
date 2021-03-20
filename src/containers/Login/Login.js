@@ -1,6 +1,7 @@
 import "./Login.css";
 import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
+import * as Yup from 'yup';
 
 const validation = values => {
   const errors = {}
@@ -13,12 +14,22 @@ const validation = values => {
 
   if (!values.password) {
     errors.password = 'Por favor, ingrese contraseña';
-  } else if (values.password.lenght <= 8) {
-    console.log("Contraseña incorrecta");
+  } else if (values.password.length < 8) {
+    errors.password = "Contraseña incorrecta";
   }
 
   return errors;
 };
+
+const SignupSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('Must be a valid email')
+    .max(255)
+    .required('Email is required'),
+  password: Yup.string()
+    .max(255)
+    .required('password is required'),
+})
 
 const Login = () => {
   return (
@@ -31,10 +42,12 @@ const Login = () => {
           }}
         onSubmit={( values, actions )=>{
           console.log(values)
-          console.log(actions)
           actions.setSubmitting(false);
+          alert(JSON.stringify(values, null, 2));
         }}
-        validate={validation}>
+        validate={validation}
+        validationSchema={SignupSchema}
+        >
         {props => <LoginForm {...props}/>}
       </Formik>
     </div>
