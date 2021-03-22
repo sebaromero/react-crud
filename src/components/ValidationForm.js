@@ -17,37 +17,40 @@ export const ValidationForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="completeName">Complete Name</label>
+      <div className='form-group'>
+        <label htmlFor="completeName">Complete Name</label>
+        <input
+          id="completeName"
+          name="completeName"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.completeName}
+        />
+      </div>
 
-      <input
-        id="completeName"
-        name="completeName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.completeName}
-      />
+      <div>
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.email}
+        />
+      </div>
 
-      <label htmlFor="email">Email</label>
+      <div>
+          <label htmlFor="username">Email Address</label>
+          <input
+            id="username"
+            name="username"
+            type="username"
+            onChange={formik.handleChange}
+            value={formik.values.username}
+          />
+      </div>
 
-      <input
-        id="email"
-        name="email"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-
-      <label htmlFor="username">Email Address</label>
-
-      <input
-        id="username"
-        name="username"
-        type="username"
-        onChange={formik.handleChange}
-        value={formik.values.username}
-      />
-
-      <button type="submit">Add User</button>
+      <button type="submit" className='btn btn-outline-success col-12'>Add User</button>
     </form>
   );
 };

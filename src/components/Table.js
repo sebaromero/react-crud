@@ -6,8 +6,8 @@ import "../styles/Buttons.css";
 
 export default function Table({ users }) {
   return (
-    <div className="container">
-      <table className="table table-dark table-striped">
+
+      <table className="table table-dark table-hover">
         <thead>
           <tr>
             <th>Name</th>
@@ -43,6 +43,5 @@ export default function Table({ users }) {
           )}
         </tbody>
       </table>
-    </div>
   );
 }
