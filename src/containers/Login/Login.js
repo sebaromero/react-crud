@@ -18,7 +18,6 @@ const SignupSchema = Yup.object().shape({
     .min(8, 'Contraseña demasiado corta')
     .max(255)
     .oneOf(passwordValid, 'Contraseña invalida')
-    .lowercase()
     .required('Por favor, ingrese contraseña'),
 })
 
