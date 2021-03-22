@@ -4,6 +4,7 @@ import "react-simple-hook-modal/dist/styles.css";
 import { AddButton } from "./index";
 import { useFormik } from "formik";
 import { validate } from "../hooks/validate";
+import axios from "axios";
 
 import "../styles/Errors.css";
 
@@ -19,8 +20,9 @@ export const ModalFormulario = () => {
       username: "",
     },
     validate,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      const data = await axios.post('https://jsonplaceholder.typicode.com/posts', values)
+      console.log(data)
     },
   });
 
