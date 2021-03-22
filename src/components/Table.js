@@ -2,46 +2,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserEdit, faUserMinus } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/Table.css";
-import "../styles/Buttons.css";
-
 export default function Table({ users }) {
   return (
-
-      <table className="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.length ? (
-            users.map((user) => (
-              <tr>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.username}</td>
-                <td className="button delete">
-                  <FontAwesomeIcon
-                    size="1x"
-                    icon={faUserMinus}
-                  ></FontAwesomeIcon>
-                </td>
-                <td className="button edit">
-                  <FontAwesomeIcon
-                    size="1x"
-                    icon={faUserEdit}
-                  ></FontAwesomeIcon>
-                </td>
-              </tr>
-            ))
-          ) : (
+    <table className="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.length ? (
+          users.map((user) => (
             <tr>
-              <td>Aún no hay usuarios registrados</td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.username}</td>
+              <td className="button delete">
+                <FontAwesomeIcon size="1x" icon={faUserMinus}></FontAwesomeIcon>
+              </td>
+              <td className="button edit">
+                <FontAwesomeIcon size="1x" icon={faUserEdit}></FontAwesomeIcon>
+              </td>
             </tr>
-          )}
-        </tbody>
-      </table>
+          ))
+        ) : (
+          <tr>
+            <td>Aún no hay usuarios registrados</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
   );
 }

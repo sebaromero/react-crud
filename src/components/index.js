@@ -1,4 +1,6 @@
 export { Header } from "./Header";
 export { Body } from "./Body";
-export { ModalForm } from "./ModalForm";
+export { ModalFormulario } from "./ModalFormulario";
+export { AddButton } from "./AddButton";
+
 // export { Table} from "/Table

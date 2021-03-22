@@ -1,17 +1,16 @@
-import { Header, Body, /* ModalForm */ } from "../../components/index";
+import { Header, Body, ModalFormulario } from "../../components/index";
 import { ModalProvider } from "react-simple-hook-modal";
-import ModalFormulario from '../../components/ModalFormulario'
 
 export const Home = () => {
   return (
     <div>
       <Header />
       <Body />
-{/*       <ModalProvider>
+      {/*       <ModalProvider>
         <ModalForm  />
       </ModalProvider> */}
       <ModalProvider>
-         <ModalFormulario />
+        <ModalFormulario />
       </ModalProvider>
     </div>
   );
