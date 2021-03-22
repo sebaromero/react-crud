@@ -3,14 +3,22 @@ import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
 import * as Yup from 'yup';
 
+const emailValid = [ 'frontend@itci.com' ];
+
+const passwordValid = [ 'frontend1234' ];
+
 const SignupSchema = Yup.object().shape({
   email: Yup.string()
     .email('Email invalido')
     .max(255)
+    .oneOf(emailValid, 'Email invalido')
+    .lowercase()
     .required('Por favor, ingrese email'),
   password: Yup.string()
-    .min(8)
+    .min(8, 'Contraseña demasiado corta')
     .max(255)
+    .oneOf(passwordValid, 'Contraseña invalida')
+    .lowercase()
     .required('Por favor, ingrese contraseña'),
 })
 
