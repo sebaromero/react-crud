@@ -3,7 +3,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/Header.css";
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="header-container">
       <div className="logo">
@@ -18,5 +18,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header

@@ -1,9 +1,9 @@
 export const validate = (values) => {
   const errors = {};
-  if (!values.completeName) {
-    errors.completeName = "Required";
-  } else if (values.completeName.length > 30) {
-    errors.completeName = "Too long! Must be a valid name";
+  if (!values.name) {
+    errors.name = "Required";
+  } else if (values.name.length > 30) {
+    errors.name = "Too long! Must be a valid name";
   }
 
   if (!values.email) {
