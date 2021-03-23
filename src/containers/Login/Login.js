@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 let history = useHistory();
 
+
 const emailValid = [ 'frontend@itci.com' ];
 
 const passwordValid = [ 'frontend1234' ];
@@ -33,10 +34,14 @@ const Login = () => {
           email: '',
           password: '',
           }}
-        onSubmit={( values, actions)=>{
+        onSubmit={(values, actions)=>{
           console.log(values)
           actions.setSubmitting(false);
+<<<<<<< HEAD
           history.push("/home");
+=======
+          
+>>>>>>> b05a48fafc9c16e97a6ad8063faaaac8b217da8c
         }}
         validationSchema={SignupSchema}
         >

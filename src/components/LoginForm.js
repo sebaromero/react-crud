@@ -1,8 +1,16 @@
 import { Field, Form } from "formik";
 import "../styles/LoginForm.css";
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 const LoginForm = ({ handleSubmit, errors, isSubmitting } ) => {
+
+let history = useHistory();
+
+const handleClick = () => {
+    history.push("/home");
+}
+
 return (
      <div className="container d-flex p-2 bd-highlight">
           <Form onSubmit={handleSubmit}
@@ -18,7 +26,7 @@ return (
                    { errors.password && <p className="error">{errors.password}</p> }
                </div>
                <div className="text-center mt-3">
-                   <button className="btn btn-info" type="submit" disabled={isSubmitting}>Ingresar</button>
+                   <button onClick={handleClick} className="btn btn-info" type="submit" disabled={isSubmitting}>Ingresar</button>
                </div>
           </Form>                   
      </div>
