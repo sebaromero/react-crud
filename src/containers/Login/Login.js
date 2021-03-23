@@ -2,6 +2,9 @@ import "./Login.css";
 import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
 import * as Yup from 'yup';
+import { useHistory } from 'react-router-dom';
+
+let history = useHistory();
 
 const emailValid = [ 'frontend@itci.com' ];
 
@@ -12,7 +15,7 @@ const SignupSchema = Yup.object().shape({
     .email('Email invalido')
     .max(255)
     .oneOf(emailValid, 'Email invalido')
-    .lowercase()
+    .lowercase(emailValid)
     .required('Por favor, ingrese email'),
   password: Yup.string()
     .min(8, 'Contraseña demasiado corta')
@@ -33,7 +36,7 @@ const Login = () => {
         onSubmit={( values, actions)=>{
           console.log(values)
           actions.setSubmitting(false);
-          alert(JSON.stringify(values, null, 2));
+          history.push("/home");
         }}
         validationSchema={SignupSchema}
         >
