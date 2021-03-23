@@ -3,6 +3,7 @@ import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
 import * as Yup from 'yup';
 
+
 const emailValid = [ 'frontend@itci.com' ];
 
 const passwordValid = [ 'frontend1234' ];
@@ -30,10 +31,10 @@ const Login = () => {
           email: '',
           password: '',
           }}
-        onSubmit={( values, actions)=>{
+        onSubmit={(values, actions)=>{
           console.log(values)
           actions.setSubmitting(false);
-          alert(JSON.stringify(values, null, 2));
+          
         }}
         validationSchema={SignupSchema}
         >
