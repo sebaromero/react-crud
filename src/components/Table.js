@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserEdit, faUserMinus } from "@fortawesome/free-solid-svg-icons";
+import { faUserMinus } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/Button.css";
 
 export const Table = ({ users }) => {
   return (
-    <table className="table table-dark table-hover">
+    <table className="table table-dark table-hover mw-100">
       <thead>
         <tr>
           <th key="name">Name</th>
@@ -25,12 +25,6 @@ export const Table = ({ users }) => {
                     <FontAwesomeIcon
                       size="1x"
                       icon={faUserMinus}
-                    ></FontAwesomeIcon>
-                  </td>
-                  <td key="edit" className="button edit">
-                    <FontAwesomeIcon
-                      size="1x"
-                      icon={faUserEdit}
                     ></FontAwesomeIcon>
                   </td>
                 </tr>

@@ -74,6 +74,8 @@ export const Body = () => {
     </div>;
   }
 
+  console.log(formik.errors);
+
   return (
     <>
       <Table users={users} />
@@ -148,7 +150,12 @@ export const Body = () => {
               </div>
 
               <div class="modal-footer">
-                <button type="submit" className="btn btn-success col-12">
+                <button
+                  disabled={!(formik.isValid && formik.dirty)}
+                  type="submit"
+                  className="btn btn-success col-12"
+                  onClick={closeModal}
+                >
                   Add User
                 </button>
               </div>
