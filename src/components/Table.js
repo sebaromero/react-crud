@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserEdit, faUserMinus } from "@fortawesome/free-solid-svg-icons";
 
+
 import "../styles/Table.css";
 export default function Table({ users }) {
   return (
@@ -27,11 +28,12 @@ export default function Table({ users }) {
               </td>
             </tr>
           ))
-        ) : (
+        ) : console.log(users.length)/* (
           <tr>
             <td>Aún no hay usuarios registrados</td>
           </tr>
-        )}
+        ) */
+        }
       </tbody>
     </table>
   );
