@@ -3,7 +3,7 @@ import { faUserMinus } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/Button.css";
 
-export const Table = ({ users }) => {
+export const Table = ({ users, removeData }) => {
   return (
     <table className="table table-dark table-hover mw-100">
       <thead>
@@ -25,6 +25,7 @@ export const Table = ({ users }) => {
                     <FontAwesomeIcon
                       size="1x"
                       icon={faUserMinus}
+                      onClick={() => removeData(user.id)}
                     ></FontAwesomeIcon>
                   </td>
                 </tr>
