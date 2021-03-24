@@ -1,31 +1,28 @@
 import "./Login.css";
 import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
-import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
 
-let history = useHistory();
+const validation = values => {
+  let errors = {};
 
+  if (!values.email) {
+    errors.email = 'Por favor, ingrese email';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Correo invalido'
+  }
+  if (!values.password) {
+    errors.password = 'Por favor, ingrese contraseña';
+  } else if (values.password.length < 8) {
+    errors.password = 'Contraseña demasiado corta';
+  }
 
-const emailValid = [ 'frontend@itci.com' ];
-
-const passwordValid = [ 'frontend1234' ];
-
-const SignupSchema = Yup.object().shape({
-  email: Yup.string()
-    .email('Email invalido')
-    .max(255)
-    .oneOf(emailValid, 'Email invalido')
-    .lowercase(emailValid)
-    .required('Por favor, ingrese email'),
-  password: Yup.string()
-    .min(8, 'Contraseña demasiado corta')
-    .max(255)
-    .oneOf(passwordValid, 'Contraseña invalida')
-    .required('Por favor, ingrese contraseña'),
-})
+  return errors;
+}
 
 const Login = () => {
+    let history = useHistory();
+
   return (
     <div className="container d-flex p-2 bd-highlight">
       <h1 className="header">Login</h1>
@@ -35,16 +32,14 @@ const Login = () => {
           password: '',
           }}
         onSubmit={(values, actions)=>{
-          console.log(values)
-          actions.setSubmitting(false);
-<<<<<<< HEAD
-          history.push("/home");
-=======
-          
->>>>>>> b05a48fafc9c16e97a6ad8063faaaac8b217da8c
+          setTimeout(() => {
+            console.log(values)
+            actions.setSubmitting(false);
+            history.push("/home");
+          }, 2000);
         }}
-        validationSchema={SignupSchema}
-        >
+        validate={validation}   
+      >
         {props => <LoginForm {...props}/>}
       </Formik>
     </div>
