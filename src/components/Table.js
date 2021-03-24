@@ -30,13 +30,11 @@ export const Table = ({ users, removeData }) => {
                   </td>
                 </tr>
               ))
-            : console.log(
-                users.length
-              ) /* (
+            : (
           <tr>
             <td>Aún no hay usuarios registrados</td>
           </tr>
-        ) */
+        ) 
         }
       </tbody>
     </table>
