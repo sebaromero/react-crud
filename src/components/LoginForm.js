@@ -2,7 +2,7 @@ import { Field, Form } from "formik";
 import "../styles/LoginForm.css";
 import React from 'react';
 
-const LoginForm = ({ handleSubmit, errors, isSubmitting, validation } ) => {
+const LoginForm = ({ handleSubmit, errors, validation } ) => {
 
     return (
         <div className="container d-flex p-2 bd-highlight">
@@ -28,7 +28,7 @@ const LoginForm = ({ handleSubmit, errors, isSubmitting, validation } ) => {
                     { errors.password && <p className="error">{errors.password}</p> }
                 </div>
                 <div className="text-center mt-3">
-                    <button className="btn btn-info" type="submit" disabled={isSubmitting}>Log In</button>
+                    <button className="btn btn-info" type="submit">Log In</button>
                 </div>
             </Form>                   
         </div>
