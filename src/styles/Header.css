@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.header-container {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  background-color: #ecb55d;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  padding: 1rem 3rem;
+  cursor: pointer;
+  margin-left: 3rem;
+  color: #2984a5;
+}
+.logo:active {
+  color: white;
+  box-shadow: 0 0 5px -1px rgba(0.2, 0.2, 0.2, 0.8);
+}
+
+.user {
+  padding: 1rem 3rem;
+}
+
+.avatar {
+  display: flex;
+  width: auto;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  cursor: pointer;
+  padding: 0.5rem;
+  user-select: none;
+}
+.avatar:active {
+  user-select: none;
+  box-shadow: 0 0 5px -1px rgba(0.2, 0.2, 0.2, 0.8);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: #2984a5;
+  font-weight: bold;
+}
+
+.username {
+  color: #2984a5;
+  font-size: 100;
+  font-weight: bold;
+}

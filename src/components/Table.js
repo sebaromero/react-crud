@@ -1,0 +1,42 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserMinus } from "@fortawesome/free-solid-svg-icons";
+
+import "../styles/Button.css";
+
+export const Table = ({ users, removeData }) => {
+  return (
+    <table className="table table-dark table-hover mw-100">
+      <thead>
+        <tr>
+          <th key="name">Name</th>
+          <th key="email">Email</th>
+          <th key="username">Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          users.length
+            ? users.map((user) => (
+                <tr>
+                  <td key="name"> {user.name}</td>
+                  <td key="email"> {user.email}</td>
+                  <td key="username"> {user.username}</td>
+                  <td key="delete" className="button delete">
+                    <FontAwesomeIcon
+                      size="1x"
+                      icon={faUserMinus}
+                      onClick={() => removeData(user.id)}
+                    ></FontAwesomeIcon>
+                  </td>
+                </tr>
+              ))
+            : (
+          <tr>
+            <td>Aún no hay usuarios registrados</td>
+          </tr>
+        ) 
+        }
+      </tbody>
+    </table>
+  );
+};
