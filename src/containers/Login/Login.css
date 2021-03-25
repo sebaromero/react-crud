@@ -1,0 +1,42 @@
+html, body {
+
+height : 100%;
+width: 100%;
+background: hsla(37, 79%, 65%, 1);
+background: linear-gradient(0deg, hsla(37, 79%, 65%, 1) 0%, hsla(41, 100%, 89%, 1) 100%);
+background: -moz-linear-gradient(0deg, hsla(37, 79%, 65%, 1) 0%, hsla(41, 100%, 89%, 1) 100%);  
+background: -webkit-linear-gradient(0deg, hsla(37, 79%, 65%, 1) 0%, hsla(41, 100%, 89%, 1) 100%);
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ECB55D", endColorstr="#FFEDC7", GradientType=1 );
+}
+
+.container {
+
+width: 80%;
+height: 80%;
+margin-top: 5%;
+margin-bottom: 2%;
+font-size: 1rem;
+background: rgba( 255, 255, 255, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1.0px );
+-webkit-backdrop-filter: blur( 1.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+font-family: 'Roboto', sans-serif;
+color: #2984A5;
+margin-left: 25%;
+padding-top: 2%;
+padding-bottom: 2%;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.header {
+
+font-size: 4rem;
+margin-top: 3%;
+font-weight: bold;
+text-align: center;
+}
+
