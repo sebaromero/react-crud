@@ -9,14 +9,14 @@ export const Login = () => {
     let errors = {};
     
     if (!values.email) {
-      errors.email = 'Por favor, ingrese email';
+      errors.email = 'Please, enter your email adress';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Correo invalido'
+      errors.email = 'Enter a valid email adress'
     }
     if (!values.password) {
-      errors.password = 'Por favor, ingrese contraseña';
+      errors.password = 'Please, enter your password';
     } else if (values.password.length < 8) {
-      errors.password = 'Contraseña demasiado corta';
+      errors.password = 'Password is too short';
     }
     
     return errors;
@@ -46,7 +46,7 @@ export const Login = () => {
           else if ( values.email !== users.email, values.password !== users.password){
             setTimeout(()=> {
               actions.setSubmitting(true)
-              alert ('usuario incorrecto')
+              alert ('Wrong username and/or password')
             }, 2000);}
         }}
         validate={validation}   

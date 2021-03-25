@@ -11,8 +11,8 @@ export const Header = () => {
       </div>
       <div className="user">
         <div className="avatar">
-          <div className="icon">NA</div>
-          <div className="username">Nombre y Apellido</div>
+          <div className="icon">NS</div>
+          <div className="username">Name and Surname</div>
         </div>
       </div>
     </div>

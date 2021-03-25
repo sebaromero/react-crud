@@ -14,21 +14,21 @@ const LoginForm = ({ handleSubmit, errors, isSubmitting, validation } ) => {
                     name="email"
                     validate={validation}
                     type="email"
-                    placeholder="Ingrese email" />
+                    placeholder="Email" />
                     { errors.email && <p className="error">{errors.email}</p> }
                 </div>
                 <div className="password">
-                    <label className="form-label mt-3" htmlFor="password">Contraseña</label>
+                    <label className="form-label mt-3" htmlFor="password">Password</label>
                     <Field className="form-control"
                     id="password" 
                     type="password"
                     name="password"
                     validate={validation}
-                    placeholder="Ingrese contraseña" />
+                    placeholder="Password" />
                     { errors.password && <p className="error">{errors.password}</p> }
                 </div>
                 <div className="text-center mt-3">
-                    <button className="btn btn-info" type="submit" disabled={isSubmitting}>Ingresar</button>
+                    <button className="btn btn-info" type="submit" disabled={isSubmitting}>Log In</button>
                 </div>
             </Form>                   
         </div>
