@@ -1,13 +1,12 @@
 import "./Login.css";
 import { Formik } from "formik";
 import LoginForm from "../../components/LoginForm.js";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 export const Login = () => {
-
-  const validation = values => {
+  const validation = (values) => {
     let errors = {};
-    
+
     if (!values.email) {
       errors.email = 'Please, enter your email adress';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -18,15 +17,15 @@ export const Login = () => {
     } else if (values.password.length < 8) {
       errors.password = 'Password is too short';
     }
-    
-    return errors;
-  }
 
-    let history = useHistory();
-    const users = {
-      email : 'frontenditci@gmail.com',
-      password : 'frontend1234'
-    } 
+    return errors;
+  };
+
+  let history = useHistory();
+  const users = {
+    email: "frontenditci@gmail.com",
+    password: "frontend1234",
+  };
 
   return (
     <div className="container d-flex p-2 bd-highlight">
@@ -49,9 +48,9 @@ export const Login = () => {
               alert ('Wrong username and/or password')
             }, 2000);}
         }}
-        validate={validation}   
+        validate={validation}
       >
-        {props => <LoginForm {...props}/>}
+        {(props) => <LoginForm {...props} />}
       </Formik>
     </div>
   );
