@@ -5,6 +5,8 @@ import { useHistory } from 'react-router-dom';
 
 const validation = values => {
   let errors = {};
+  
+  
 
   if (!values.email) {
     errors.email = 'Por favor, ingrese email';
@@ -16,12 +18,16 @@ const validation = values => {
   } else if (values.password.length < 8) {
     errors.password = 'Contraseña demasiado corta';
   }
-
+  
   return errors;
 }
 
 const Login = () => {
     let history = useHistory();
+    const users = {
+      email : 'frontenditci@gmail.com',
+      password : 'frontend1234'
+    } 
 
   return (
     <div className="container d-flex p-2 bd-highlight">
@@ -32,11 +38,17 @@ const Login = () => {
           password: '',
           }}
         onSubmit={(values, actions)=>{
+          if ( values.email == users.email, values.password == users.password){
           setTimeout(() => {
             console.log(values)
             actions.setSubmitting(false);
             history.push("/home");
-          }, 2000);
+          }, 2000);}
+          else if ( values.email !== users.email, values.password !== users.password){
+            setTimeout(()=> {
+              actions.setSubmitting(true)
+              alert ('usuario incorrecto')
+            }, 2000);}
         }}
         validate={validation}   
       >
