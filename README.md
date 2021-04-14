@@ -1,3 +1,6 @@
+## Api 
+[{JSON} Placeholder](https://jsonplaceholder.typicode.com/) - Free fake API for testing and prototyping.
+
 ## Collaborators
 - [Gabriel Cerri](https://github.com/gabrielcerri)
 - [Juan Ignacio Fernandez](https://github.com/ferdezjuani)
