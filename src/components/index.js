@@ -4,3 +4,4 @@ export { fetchData } from "../api/users";
 export { validate } from "../hooks/validate";
 export { Header } from "./Header";
 export { Body } from "./Body";
+export { ProtectedRoute } from "./ProtectedRoute";

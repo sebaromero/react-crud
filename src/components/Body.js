@@ -58,11 +58,10 @@ export const Body = () => {
     },
   });
 
-const removeData = async (id) => {
-  await await axios.delete('http://jsonplaceholder.typicode.com/users/'+ id)
-  setState({users: [...users].filter(user => user.id !== id)})
-}
-
+  const removeData = async (id) => {
+    await await axios.delete("http://jsonplaceholder.typicode.com/users/" + id);
+    setState({ users: [...users].filter((user) => user.id !== id) });
+  };
 
   if (loading) {
     return (
@@ -84,7 +83,7 @@ const removeData = async (id) => {
 
   return (
     <>
-      <Table users={users} removeData={removeData}/>
+      <Table users={users} removeData={removeData} />
       <AddButton onClick={openModal} text="Add user" />
       <div>
         <ModalProvider>

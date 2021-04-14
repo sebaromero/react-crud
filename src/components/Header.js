@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
 import "../styles/Header.css";
@@ -21,6 +21,9 @@ export const Header = () => {
           <div className="icon">NS</div>
           <div className="username">Name and Surname</div>
         </div>
+      </div>
+      <div className="logout">
+        <FontAwesomeIcon size="2x" icon={faSignOutAlt}></FontAwesomeIcon>
       </div>
     </div>
   );
