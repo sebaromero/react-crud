@@ -1,4 +1,4 @@
-## Api 
+## API
 [{JSON} Placeholder](https://jsonplaceholder.typicode.com/) - Free fake API for testing and prototyping.
 
 ## Collaborators
